@@ -21,14 +21,4 @@ class User < ActiveRecord::Base
     "#{firstname} #{lastname}"
   end
 
-  # def admin=(value)
-  #   if value == '1'
-  #     true
-  #   elsif value == '0'
-  #     false
-  #   else
-  #     value
-  #   end
-  # end
-
 end

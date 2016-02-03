@@ -1,6 +1,21 @@
 <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
+
+<%= form_tag(movies_path, method: "get") do %>
+<%= text_field_tag :title, params[:title], placeholder: "Search Movie Title" %>
+<br>
+<%= text_field_tag :director, params[:director], placeholder: "Search Director" %>
+<br>
+<%= select_tag :runtime_in_minutes, options_for_select([
+  ["Under 90 Minutes", 1],
+  ["Between 90 and 120 Minutes", 2],
+  ["Over 120 Minutes",3]]), 
+  {:include_blank => "Duration"}  %>
+<%= submit_tag "Search" %>
+<!-- write a helper if u use select tags often -->
+<% end %>
+
 <% @movies.each do |movie| %>
   <%= image_tag(movie.image.thumb.url) %>
   <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %></h2>

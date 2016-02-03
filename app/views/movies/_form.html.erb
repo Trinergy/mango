@@ -11,23 +11,23 @@
   <% end %>
   <div>
     <%= f.label "title" %><br>
-    <%= f.text_field "title" %>
+    <%= f.text_field :title %>
   </div>
   <div>
     <%= f.label "release_date" %><br>
-    <%= f.date_field "release_date" %>
+    <%= f.date_field :release_date %>
   </div>
   <div>
     <%= f.label "director" %><br>
-    <%= f.text_field "director" %>
+    <%= f.text_field :director %>
   </div>
   <div>
     <%= f.label "runtime_in_minutes" %><br>
-    <%= f.text_field "runtime_in_minutes" %>
+    <%= f.text_field :runtime_in_minutes %>
   </div>
   <div>
     <%= f.label "image" %><br>
-    <%= f.file_field "image" %>
+    <%= f.file_field :image %>
     <% if f.object.image? %>
       <%= image_tag f.object.image.thumb.url %>
       <%= f.label :remove_image %>
@@ -36,7 +36,7 @@
   </div>
   <div>
     <%= f.label "description" %><br>
-    <%= f.text_area "description" %>
+    <%= f.text_area :description  %>
   </div>
   <div>
     <%= f.submit "Submit" %> 
