@@ -1,5 +1,12 @@
 class Movie < ActiveRecord::Base
+  paginates_per 10
+
   mount_uploader :image, ImageUploader
+
+  scope :search, ->(query) { where('title LIKE ? OR director LIKE ?', "%#{query}%", "%#{query}%" ) }
+  scope :under_90_minutes, -> { where('runtime_in_minutes < 90') }
+  scope :between_90_and_120_minutes, -> { where('runtime_in_minutes >= 90 AND runtime_in_minutes <= 120') }
+  scope :over_120_minutes, -> { where('runtime_in_minutes > 120') }
 
   has_many :reviews
 
