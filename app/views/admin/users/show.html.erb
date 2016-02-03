@@ -1,0 +1,8 @@
+<h1>Rotten Mangoes</h1>
+<p> Admin </p>
+<h2>User Details</h2>
+
+<h4> <%= @user.full_name %> </h4>
+<p> <%= @user.email %> </p>
+<%= link_to "edit", edit_admin_user_path(@user) %>
+<%= link_to "back to users", admin_users_path %>

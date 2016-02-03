@@ -1,0 +1,12 @@
+<h1>Rotten Mangoes</h1>
+<p> Admin </p>
+
+<% @users.each do |user| %>
+  <%= link_to user.full_name, admin_user_path(user) %><br>
+  <small><%= user.email %></small>
+  <br>
+<% end %>
+<%= paginate @users %>
+<br>
+<br>
+<%= link_to "back to homepage", movies_path %>
