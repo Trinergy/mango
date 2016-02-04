@@ -1,19 +1,19 @@
-<h1>Rotten Mangoes</h1>
+<%= render 'carousel' %>
+<%= render 'top_three' %>
 
-
+<div class="search_form">
+<h2>Find your movie</h2>
 <%= form_tag(movies_path, method: "get") do %>
 <%= text_field_tag :query, params[:query], placeholder: "Search Movie Title or Director" %>
-<br>
 <%= select_tag :runtime_in_minutes, options_for_select([
   ['Under 90 Minutes', 'under90'],
   ['Between 90 and 120 Minutes', '91to120'],
   ['Over 120 Minutes','over120']]), 
   {:include_blank => "Duration"}  %>
 <%= submit_tag "Search" %>
+</div>
 <!-- write a helper if u use select tags often -->
 <% end %>
-
+<div class="movies_container">
 <%= render 'movie' %>
-<%= link_to "Submit a movie!", new_movie_path %>
-<hr>
-<%= paginate @movies %>
+</div>

@@ -1,8 +1,10 @@
+
 <% @movies.each do |movie| %>
+<div class="movies_display">
   <%= image_tag(movie.image.thumb.url) %>
-  <h2><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %></h2>
-  <h3><%= formatted_date(movie.release_date) %></h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
-  <hr>
+  <h4><%= link_to movie.title, movie_path(movie) %> | <%= movie.review_average %></h4>
+  <h5><%= formatted_date(movie.release_date) %></h5>
+  <h6>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h6>
+  <p><%= truncate(movie.description, length: 90) %></p>
+</div>
 <% end %>

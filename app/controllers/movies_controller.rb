@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
     if params[:runtime_in_minutes]
       case params[:runtime_in_minutes]
       when 'under90'
+        #factor the order and page params, since repeating
         @movies = @movies.under_90_minutes.order(:title).page params[:page]
       when '91to120'
         @movies = @movies.between_90_and_120_minutes.order(:title).page params[:page]
@@ -60,7 +61,7 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(
-      :title, :release_date, :director, :runtime_in_minutes, :image, :description
+      :title, :release_date, :director, :runtime_in_minutes, :image, :description, :genre
     )
   end
 

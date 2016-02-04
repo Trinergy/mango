@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready(function() {
+ 
+//   var carousel = $("#myCarousel");
+ 
+//   carousel.carousel_slide({
+//     navigation : true,
+//     singleItem : true,
+//     transitionStyle : "fade"
+//   });
+ 
+// });
