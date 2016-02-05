@@ -1,10 +1,23 @@
-<%= link_to "Back to all movies", movies_path %><br/>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<%= link_to image_tag(@movie.image.poster.url), movie_path(@movie) %>
-<h2><%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: { confirm: "You sure?" } %>) | <%= @movie.review_average %>/10</h2>
-<h3><%= formatted_date(@movie.release_date) %></h3>
+<%= link_to image_tag(@movie.image.poster.url, height: '412', width: '412', id: "image_show", class: "featurette-image img-circle pull-left" ), movie_path(@movie) %>
+<div class="review_center">
+<h2 class="featurette-heading"><%= @movie.title %> <small>(<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: { confirm: "You sure?" } %>)  | <%= @movie.review_average %></h2></small>
+<span class="text-muted"><h3><%= formatted_date(@movie.release_date) %></h3></span>
 <h4>Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
-<p><%= @movie.description %></p>
+<p class="lead"><%= @movie.description %></p>
+<%= link_to "Back to all movies", movies_path %>
 
 <hr>
 
@@ -19,3 +32,4 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
 <% end %>
+</div>

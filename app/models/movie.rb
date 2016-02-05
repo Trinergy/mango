@@ -7,6 +7,9 @@ class Movie < ActiveRecord::Base
   scope :under_90_minutes, -> { where('runtime_in_minutes < 90') }
   scope :between_90_and_120_minutes, -> { where('runtime_in_minutes >= 90 AND runtime_in_minutes <= 120') }
   scope :over_120_minutes, -> { where('runtime_in_minutes > 120') }
+  scope :highest_rating, -> { all.sort_by {|movie| movie.review_average}.reverse.first }
+  scope :most_popular, -> { all.sort_by {|movie| movie.reviews.size}.reverse.first }
+  scope :newest_addition, -> { order(created_at: :desc).first }
 
   has_many :reviews
 
@@ -31,7 +34,11 @@ class Movie < ActiveRecord::Base
   validate :release_date_is_in_the_past
 
   def review_average
-    reviews.sum(:rating_out_of_ten)/reviews.size unless reviews.size == 0
+    if reviews.size == 0
+      0
+    else
+      reviews.sum(:rating_out_of_ten)/reviews.size
+    end
   end
 
   protected

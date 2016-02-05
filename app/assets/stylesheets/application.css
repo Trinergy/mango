@@ -39,6 +39,8 @@
 .movies_display img {
   display: table;
   margin: 0 auto;
+  box-shadow: 2px 2px 2px 2px #cccccc;
+  border-radius: 3px;
 }
 
 .movies_display h4 {
@@ -58,12 +60,42 @@
 
 .movies_container {
   margin-left: auto;
-  width: 90%;
+  width: 85%;
+}
+
+.review_center {
+  width: 60%;
+  margin-left: 40%
+}
+
+.img-circle {
+  box-shadow: 2px 2px 2px 2px #cccccc;
+}
+
+.carousel-caption h1 {
+  text-shadow: 2px 2px 2px black;
+}
+
+.admin_view {
+  margin: 5% auto auto 40%;
+}
+
+.admin_view p {
+  padding: 10px;
+}
+
+.admin_table th {
+  padding: 10px;
+}
+
+.admin_table td {
+  padding: 10px;
 }
 
 #footer {
   display: table;
   margin: 0 auto;
+  margin-left: auto;
   clear: both;
   position: relative;
   z-index: 10;
@@ -79,4 +111,9 @@
   width: 100%;
   padding-left: 0px;
   padding-right: 0px;
+}
+
+#image_show {
+  margin-right: 2%;
+  margin-left: 2%
 }

@@ -3,22 +3,40 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
+    <a href="/movies/<%= @top_rated.id %>">
+    <span>
+      <%= image_tag(@top_rated.image.poster.url, height: '200', width: '200',  class: "img-circle") %>
+    </span>
+      </a>
       <h2>Top Rated</h2>
-      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <p><%= @top_rated.title %> <br>
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      <%= @top_rated.review_average %></p>
+      <p>Directed by: <%= @top_rated.director %></p>
     </div>
     <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
+    <a href="/movies/<%= @popular.id %>">
+    <span>
+      <%= image_tag(@popular.image.poster.url, height: '200', width: '200',  class: "img-circle") %>
+    </span>
+    </a>
       <h2>Most Popular</h2>
-      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <p><%= @popular.title %> <br>
+      <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      <%= @popular.reviews.size %></p>
+      <p>Directed by: <%= @popular.director %></p>
     </div>
     <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
+    <a href="/movies/<%= @new.id %>">
+    <span>
+      <%= image_tag(@new.image.poster.url, height: '200', width: '200',  class: "img-circle") %>
+    </span>
+    </a>
       <h2>Newly Added</h2>
-      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <p><%= @new.title %> <br>
+      <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+      <%= @new.created_at.strftime("%b %e, %l:%M %p") %></p>
+      <p>Directed by: <%= @new.director %></p>
     </div>
   </div><!-- /.row -->
 

@@ -1,7 +1,9 @@
 class MoviesController < ApplicationController
 
   def index
-
+    @top_rated = Movie.highest_rating
+    @popular = Movie.most_popular
+    @new = Movie.newest_addition
     @movies = Movie.order(:title).page params[:page]
     @movies = Movie.search(params[:query]).order(:title).page params[:page] if params[:query]
     if params[:runtime_in_minutes]
