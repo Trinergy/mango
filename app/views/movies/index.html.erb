@@ -2,15 +2,15 @@
 <%= render 'top_three' %>
 
 <div class="search_form">
-<h2>Find your movie</h2>
+<h2>Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></h2>
 <%= form_tag(movies_path, method: "get") do %>
-<%= text_field_tag :query, params[:query], placeholder: "Search Movie Title or Director" %>
+<%= text_field_tag :query, params[:query], placeholder: "Search Movie Title or Director", id: "search_field" %>
 <%= select_tag :runtime_in_minutes, options_for_select([
   ['Under 90 Minutes', 'under90'],
   ['Between 90 and 120 Minutes', '91to120'],
-  ['Over 120 Minutes','over120']]), 
-  {:include_blank => "Duration"}  %>
-<%= submit_tag "Search" %>
+  ['Over 120 Minutes','over120']]),
+  {:include_blank => "Duration", class: "btn btn-default", id: "search_field" } %>
+<%= submit_tag "Search", class: "btn btn-default", id: "search_button" %>
 </div>
 <!-- write a helper if u use select tags often -->
 <% end %>
