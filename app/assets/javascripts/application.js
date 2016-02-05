@@ -15,14 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-// $(document).ready(function() {
- 
-//   var carousel = $("#myCarousel");
- 
-//   carousel.carousel_slide({
-//     navigation : true,
-//     singleItem : true,
-//     transitionStyle : "fade"
-//   });
- 
-// });
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

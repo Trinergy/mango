@@ -4,15 +4,16 @@
   <% if @movies %>
   <%= paginate @movies %>
   <% end %>
+  <p data-toggle="tooltip" data-placement="right" title="Special Thanks: Andy, Sam, Don, Jonathan"><small>Made with <span class="glyphicon glyphicon-fire" aria-hidden="true"></span></small></p>
   <small>
     <br>
     <% if current_user %>
-      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+      Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>) <span class="glyphicon glyphicon-logout" aria-hidden="true"></span>
       <% if current_user.admin? %>
       <%= link_to "Admin", admin_users_path %>
       <% end %>
     <% else %>
-      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+      <%= link_to "Log In", new_session_path %> <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> | <%= link_to "Sign Up", new_user_path %> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
     <% end %>
     
   </small>
