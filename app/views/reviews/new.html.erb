@@ -1,5 +1,5 @@
-<%= link_to "Back to movie", movie_path(@movie) %><br/>
 
+<div class="center_form">
 <h2>Write a review of <em><%= @movie.title %></em>.</h2>
 
 <%= form_for([@movie, @review]) do |f| %>
@@ -24,3 +24,5 @@
   </div>
   <div><%= f.submit "Submit" %></div>
 <% end %>
+<%= link_to "Back to movie", movie_path(@movie) %><br/>
+</div>

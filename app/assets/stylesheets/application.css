@@ -139,6 +139,10 @@
     top:1px;   
 }
 
+.center_page {
+  margin-right: 4%;
+}
+
 #search_field {
   height: 35px;
   width: 200px;

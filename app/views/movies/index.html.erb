@@ -1,6 +1,7 @@
 <%= render 'carousel' %>
 <%= render 'top_three' %>
 
+<div class="center_page">
 <div class="search_form">
 <h2>Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></h2>
 <%= form_tag(movies_path, method: "get") do %>
@@ -16,4 +17,5 @@
 <% end %>
 <div class="movies_container">
 <%= render 'movie' %>
+</div>
 </div>
