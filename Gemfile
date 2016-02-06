@@ -56,6 +56,8 @@ gem 'mini_magick', '~> 4.3'
 
 gem 'kaminari'
 
+gem 'fog-json', '~> 1.0.0'
+
 group :production do
   gem 'pg'
   gem 'puma'
