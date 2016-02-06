@@ -1,5 +1,5 @@
 require 'carrierwave/orm/activerecord'
-unless ENV['AWS_ACCESS_KEY_ID'].blank?
+unless ENV['AKIAJV7P64RX5PVI6ZIQ'].blank?
   CarrierWave.configure do |config|
     config.fog_credentials = {
       # Configuration for Amazon S3 should be made available through an Environment variable.
