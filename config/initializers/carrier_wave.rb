@@ -26,6 +26,8 @@ unless ENV['AKIAJV7P64RX5PVI6ZIQ'].blank?
       config.storage = :fog
     end
 
+    config.fog_provider = 'fog'
+
     config.cache_dir = "#{Rails.root}/tmp/uploads"                  # To let CarrierWave work on heroku
 
     config.fog_directory    = ENV['mango1221']
