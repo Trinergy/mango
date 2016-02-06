@@ -56,6 +56,7 @@ gem 'mini_magick', '~> 4.3'
 
 gem 'kaminari'
 
+gem 'fog'
 gem 'fog-aws'
 
 group :production do
