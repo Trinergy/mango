@@ -49,16 +49,21 @@ gem 'bcrypt', '~> 3.1.2'
 # gem 'debugger', group: [:development, :test]
 
 # Image uploading gem
-gem 'carrierwave', '~> 0.10.0'
-gem 'mini_magick', '~> 4.3'
+# gem 'carrierwave', '~> 0.10.0'
+# gem 'mini_magick', '~> 4.3'
+
+gem 'carrierwave'
+gem 'mini_magick'
 
 #Pagination
 
 gem 'kaminari'
 
 gem 'fog'
-gem 'fog-aws'
 
+gem 'aws-sdk'
+
+gem 'figaro'
 group :production do
   gem 'pg'
   gem 'puma'
