@@ -60,6 +60,7 @@ gem 'mini_magick'
 gem 'kaminari'
 
 gem 'fog'
+gem 'fog-aws'
 
 gem 'aws-sdk'
 
