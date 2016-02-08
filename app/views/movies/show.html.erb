@@ -1,15 +1,4 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="center_show">
 
 <%= image_tag(@movie.image.poster.url, height: '412', width: '412', id: "image_show", class: "featurette-image img-circle pull-left" ) %>
 <div class="review_center">
@@ -37,4 +26,5 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to see reviews and add your own.</p> 
 <% end %>
+</div>
 </div>
